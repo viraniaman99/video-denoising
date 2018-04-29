@@ -50,7 +50,7 @@ def soft_threshold(tau, R):
 	u, s, vh = svd(R, full_matrices=False)
 	s = s - tau
 	s = np.maximum(s, 0)
-	return u*s*vh
+	return u*np.diag(s)*vh
 
 
 
